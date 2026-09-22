@@ -1,5 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import ClientesPage from "./pages/ClientesPage";
+import ProdutosPage from "./pages/ProdutosPage";
+import TarefasPage from "./pages/TarefasPage";
 
 function HomePage() {
   return (
@@ -14,9 +16,17 @@ function HomePage() {
           consulta, edição e exclusão de clientes.
         </p>
 
-        <Link to="/clientes" className="home-button">
-          Acessar clientes
-        </Link>
+        <div className="home-actions">
+          <Link to="/clientes" className="home-button">
+            Acessar clientes
+          </Link>
+          <Link to="/produtos" className="home-button secondary-home-button">
+            Acessar produtos
+          </Link>
+          <Link to="/tarefas" className="home-button secondary-home-button">
+            Acessar tarefas
+          </Link>
+        </div>
       </section>
     </main>
   );
@@ -35,6 +45,8 @@ export default function App() {
           <nav>
             <Link to="/">Início</Link>
             <Link to="/clientes">Clientes</Link>
+            <Link to="/produtos">Produtos</Link>
+            <Link to="/tarefas">Tarefas</Link>
           </nav>
         </div>
       </header>
@@ -42,6 +54,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/clientes" element={<ClientesPage />} />
+        <Route path="/produtos" element={<ProdutosPage />} />
+        <Route path="/tarefas" element={<TarefasPage />} />
       </Routes>
     </div>
   );
